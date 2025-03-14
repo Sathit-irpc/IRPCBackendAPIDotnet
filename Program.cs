@@ -51,6 +51,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAngularApp", policy =>
     {
         policy.WithOrigins("http://localhost:4200", "https://*.onrender.com/","http://localhost:3000","https://*.netlify.app/")
+            .SetIsOriginAllowedToAllowWildcardSubdomains()
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials();
